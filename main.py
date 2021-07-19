@@ -47,11 +47,11 @@ while events:
         print(f"Removed event: {events[1]}, {events[0]}")
         events.pop(0)
         events.pop(0)
+    # Send notification
     if(event_time == current_time):
-        # Send notification
         toaster = ToastNotifier()
         toaster.show_toast(title="Scheduler", msg=f"{events[1]}", duration=50)
 
-        # # Remove completed events
+        # Remove completed events
         events.pop(0)
         events.pop(0)
