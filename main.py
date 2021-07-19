@@ -1,6 +1,5 @@
 from win10toast import ToastNotifier
 from datetime import date, datetime
-# from time import sleep
 
 filename = input("Which file to read? ")
 
@@ -42,7 +41,6 @@ while events:
 
     now = datetime.now()
     current_time = now.strftime("%H:%M:%S")
-    # print(current_time)
 
     # Remove missed events
     if(event_time < current_time):
@@ -52,9 +50,8 @@ while events:
     if(event_time == current_time):
         # Send notification
         toaster = ToastNotifier()
-        toaster.show_toast(title="Scheduler", msg=f"{events[1]}", duration=1700)
+        toaster.show_toast(title="Scheduler", msg=f"{events[1]}", duration=50)
 
         # # Remove completed events
-        # events.pop(0)
-        # events.pop(0)
-        # sleep(1700)
+        events.pop(0)
+        events.pop(0)
